@@ -50,3 +50,14 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
+# Project
+# */*.cache/*
+# */*.hw/*
+# */*.runs/*
+# */*.xpr
+# */*.sim
+# */*.ip_user_files
+# */*.ip_user_files
+# /final_project/final_project.srcs/utils_1/*
