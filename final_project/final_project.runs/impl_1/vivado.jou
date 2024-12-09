@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Dec  9 09:05:44 2024
+# Process ID: 15148
+# Current directory: C:/Users/Vivobook/github/hw-syn-lab-final-project/final_project/final_project.runs/impl_1
+# Command line: vivado.exe -log system.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source system.tcl -notrace
+# Log file: C:/Users/Vivobook/github/hw-syn-lab-final-project/final_project/final_project.runs/impl_1/system.vdi
+# Journal file: C:/Users/Vivobook/github/hw-syn-lab-final-project/final_project/final_project.runs/impl_1\vivado.jou
+# Running On        :Nacnano-Laptop
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :13th Gen Intel(R) Core(TM) i9-13900H
+# CPU Frequency     :2995 MHz
+# CPU Physical cores:14
+# CPU Logical cores :20
+# Host memory       :16791 MB
+# Swap memory       :13617 MB
+# Total Virtual     :30409 MB
+# Available Virtual :14378 MB
+#-----------------------------------------------------------
+source system.tcl -notrace

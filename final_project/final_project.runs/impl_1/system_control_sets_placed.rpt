@@ -1,0 +1,241 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Mon Dec  9 09:06:32 2024
+| Host         : Nacnano-Laptop running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file system_control_sets_placed.rpt
+| Design       : system
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   163 |
+|    Minimum number of control sets                        |   163 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   297 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   163 |
+| >= 0 to < 4        |    19 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |   132 |
+| >= 8 to < 10       |     8 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     1 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              40 |           14 |
+| No           | No                    | Yes                    |              14 |            5 |
+| No           | Yes                   | No                     |              64 |           20 |
+| Yes          | No                    | No                     |             926 |          339 |
+| Yes          | No                    | Yes                    |              10 |            6 |
+| Yes          | Yes                   | No                     |               9 |            5 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
+|       Clock Signal      |                   Enable Signal                  |                 Set/Reset Signal                 | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/receiver/rx_data[4]                   |                                                  |                1 |              1 |         1.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/receiver/rx_data[5]                   |                                                  |                1 |              1 |         1.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/receiver/rx_data[7]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/receiver/rx_data[4]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/receiver/rx_data[2]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/receiver/rx_data[7]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/receiver/rx_data[3]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/receiver/rx_data[0]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/receiver/rx_data[1]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/receiver/rx_data[5]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/receiver/rx_data[6]                   |                                                  |                1 |              1 |         1.00 |
+|  baud_BUFG              | uart1_inst/transmitter/serial_out                | uart1_inst/transmitter/serial_out0               |                1 |              1 |         1.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/transmitter/serial_out_i_2__0_n_0     | uart2_inst/transmitter/serial_out0               |                1 |              1 |         1.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/receiver/rx_data[1]                   |                                                  |                1 |              1 |         1.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/receiver/rx_data[2]                   |                                                  |                1 |              1 |         1.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/receiver/rx_data[0]                   |                                                  |                1 |              1 |         1.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/receiver/rx_data[3]                   |                                                  |                1 |              1 |         1.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/receiver/rx_data[6]                   |                                                  |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG          |                                                  | reset_IBUF                                       |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG          | pixel_tick_BUFG                                  |                                                  |                3 |              5 |         1.67 |
+|  baud_BUFG              |                                                  |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[76][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[84][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[85][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[7][6]_i_1_n_0               |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[86][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[78][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  clk_IBUF_BUFG          | pixel_tick_BUFG                                  | vga_inst/clk_divider_reg[0]_0                    |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[87][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[97][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  rx_data_reg[7]_i_2_n_0 |                                                  |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[88][6]_i_1_n_0              |                                                  |                5 |              7 |         1.40 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[64][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[69][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    |                                                  | uart1_inst/receiver/rx_data_reg[4]_0             |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    |                                                  | text_gen_inst/write_pointer[6]_i_1_n_0           |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[92][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[94][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[8][6]_i_1_n_0               |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[95][6]_i_1_n_0              |                                                  |                5 |              7 |         1.40 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[63][6]_i_1_n_0              |                                                  |                5 |              7 |         1.40 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[99][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[91][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[93][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[96][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[89][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[9][6]_i_1_n_0               |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[98][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[90][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[103][6]_i_1_n_0             |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[109][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[125][6]_i_1_n_0             |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[111][6]_i_1_n_0             |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer                             |                                                  |                6 |              7 |         1.17 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[120][6]_i_1_n_0             |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[112][6]_i_1_n_0             |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[106][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[115][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[107][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[116][6]_i_1_n_0             |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[10][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[118][6]_i_1_n_0             |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[105][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[119][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[121][6]_i_1_n_0             |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[124][6]_i_1_n_0             |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[117][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[110][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[114][6]_i_1_n_0             |                                                  |                5 |              7 |         1.40 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[12][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[13][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[108][6]_i_1_n_0             |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[14][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[15][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[16][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[113][6]_i_1_n_0             |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[104][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[102][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[11][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[122][6]_i_1_n_0             |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[123][6]_i_1_n_0             |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[126][6]_i_1_n_0             |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[101][6]_i_1_n_0             |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[100][6]_i_1_n_0             |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[20][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[27][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[30][6]_i_1_n_0              |                                                  |                5 |              7 |         1.40 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[2][6]_i_1_n_0               |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[31][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[33][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[40][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[41][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[44][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[46][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[22][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[18][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[47][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[50][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[52][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[43][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[48][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[28][6]_i_1_n_0              |                                                  |                5 |              7 |         1.40 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[39][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[35][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[17][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[38][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[29][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[34][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[53][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[54][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[56][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[57][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[21][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[4][6]_i_1_n_0               |                                                  |                5 |              7 |         1.40 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[45][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[5][6]_i_1_n_0               |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[60][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[59][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[61][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[62][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[36][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[3][6]_i_1_n_0               |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[37][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[42][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[51][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[25][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[23][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[55][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[58][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[26][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[24][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[19][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[1][6]_i_1_n_0               |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[49][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[32][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[70][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[73][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[75][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[72][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[68][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[66][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[77][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[80][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[81][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[82][6]_i_1_n_0              |                                                  |                1 |              7 |         7.00 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[71][6]_i_1_n_0              |                                                  |                3 |              7 |         2.33 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[74][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[65][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[79][6]_i_1_n_0              |                                                  |                6 |              7 |         1.17 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[83][6]_i_1_n_0              |                                                  |                2 |              7 |         3.50 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[67][6]_i_1_n_0              |                                                  |                4 |              7 |         1.75 |
+|  uart1_received_BUFG    | text_gen_inst/buffer[6][6]_i_1_n_0               |                                                  |                5 |              7 |         1.40 |
+|  baud_BUFG              |                                                  | uart1_inst/receiver/tick_count[7]_i_1_n_0        |                3 |              8 |         2.67 |
+|  baud_BUFG              |                                                  | uart1_inst/transmitter/bit_counter[7]_i_1_n_0    |                2 |              8 |         4.00 |
+|  baud_BUFG              | uart1_inst/transmitter/data_buffer[7]_i_1_n_0    |                                                  |                3 |              8 |         2.67 |
+|  rx_data_reg[7]_i_2_n_0 |                                                  | uart2_inst/receiver/tick_count[7]_i_1__0_n_0     |                3 |              8 |         2.67 |
+|  rx_data_reg[7]_i_2_n_0 |                                                  | uart2_inst/transmitter/bit_counter[7]_i_1__0_n_0 |                2 |              8 |         4.00 |
+|  rx_data_reg[7]_i_2_n_0 | uart2_inst/transmitter/data_buffer[7]_i_1__0_n_0 |                                                  |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG          |                                                  | uart2_inst/baudrate_gen/baud_signal              |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG          |                                                  | uart1_inst/baudrate_gen/baud_signal              |                2 |              9 |         4.50 |
+|  pixel_tick_BUFG        | vga_inst/v_count                                 | reset_IBUF                                       |                6 |             10 |         1.67 |
+|  pixel_tick_BUFG        |                                                  | reset_IBUF                                       |                4 |             12 |         3.00 |
+|  clk_IBUF_BUFG          |                                                  |                                                  |                8 |             26 |         3.25 |
++-------------------------+--------------------------------------------------+--------------------------------------------------+------------------+----------------+--------------+
+
+
